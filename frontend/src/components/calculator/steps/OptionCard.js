@@ -1,10 +1,13 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 
-export default function OptionCard({ label, description, selected, onClick, compact = false }) {
+export default function OptionCard({ label, description, selected, onClick, compact = false, onMouseEnter, onMouseLeave, onFocus }) {
   return (
     <button
       onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onFocus={onFocus || onMouseEnter}
       style={{
         textAlign: 'left', width: '100%', padding: compact ? '10px 12px' : '13px 14px',
         border: `1.5px solid ${selected ? 'var(--primary)' : 'var(--border)'}`,
