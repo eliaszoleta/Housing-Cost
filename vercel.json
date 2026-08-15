@@ -1,17 +1,27 @@
 {
-  "installCommand": "npm install",
-  "buildCommand": "CI=false npm run build",
-  "outputDirectory": "frontend/build",
+  "services": {
+    "frontend": {
+      "root": "frontend",
+      "framework": "create-react-app"
+    },
+    "backend": {
+      "root": "backend"
+    }
+  },
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "headers": [
     {
-      "source": "/robots.txt",
-      "headers": [
-        { "key": "Content-Type", "value": "text/plain" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
-      ]
+      "source": "/api(/.*)?",
+      "destination": {
+        "type": "service",
+        "service": "backend"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
     }
   ]
 }

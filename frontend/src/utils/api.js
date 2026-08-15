@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:3001';
+// Empty string = relative "/api/..." requests. This works out of the box against:
+//  - CRA's dev proxy (frontend/package.json "proxy" field) during `npm start`
+//  - Vercel's multi-service rewrites (root vercel.json) in production
+// Set REACT_APP_API_BASE only if the backend is deployed on a separate origin (e.g. Railway).
+const API_BASE = process.env.REACT_APP_API_BASE || '';
 
 const client = axios.create({ baseURL: API_BASE, timeout: 20000 });
 
