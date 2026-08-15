@@ -15,7 +15,7 @@ const styles = {
 const navItems = [
   { label: 'Calculator', href: url('/') },
   { label: 'Cost by State', href: url('/#state-costs') },
-  { label: 'FAQ', href: url('/#faq') },
+  { label: 'Blog', href: url('/blog') },
   { label: 'About', href: url('/about') },
 ];
 

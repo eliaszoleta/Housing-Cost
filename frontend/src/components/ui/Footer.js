@@ -21,7 +21,7 @@ export default function Footer() {
 
           <div>
             <div style={{ fontSize: 12, fontWeight: 700, color: 'white', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 12 }}>Explore</div>
-            {[['Calculator', '/'], ['Cost by State', '/#state-costs'], ['FAQ', '/#faq']].map(([label, href]) => (
+            {[['Calculator', '/'], ['Cost by State', '/#state-costs'], ['Blog', '/blog'], ['FAQ', '/#faq']].map(([label, href]) => (
               <a key={label} href={url(href)} style={{ display: 'block', fontSize: 13.5, color: '#a9c2b4', marginBottom: 9 }}>{label}</a>
             ))}
           </div>
