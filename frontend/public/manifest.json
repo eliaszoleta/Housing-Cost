@@ -1,0 +1,9 @@
+{
+  "short_name": "HomeCostCal",
+  "name": "HomeCostCal — Home Construction Cost Calculator",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#123524",
+  "background_color": "#ffffff"
+}
